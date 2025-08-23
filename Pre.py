@@ -76,3 +76,4 @@ class DetalleCompras():
         self.Subtotal = Subtotal
         self.FechaCad = FechaCad
 
+
