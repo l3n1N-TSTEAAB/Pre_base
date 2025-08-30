@@ -1,14 +1,58 @@
 ##inicio
-
-
 class Productos():
-    def __init__(self,IdProducto,Nombre,Precio,IdCategoria,TotalCompras,TotalVentas,Stock):
+    def __init__(self,IdProducto,Nombre,IdCategoria,Precio,TotalCompras,TotalVentas,Stock):
+        self.IdProducto = IdProducto
         self.Nombre = Nombre
-        self.Precio = Precio
         self.IdCategoria = IdCategoria
+        self.Precio = Precio
         self.TotalCompras = TotalCompras
         self.TotalVentas = TotalVentas
         self.Stock = Stock
+
+    def mostrarProductos(self):
+        return (f"Codigo: {self.IdProducto} - Nombre: {self.nombre} - Categoria: {self.categoria} Precio: {self.Precio}"
+                f"Total Compras: {self.TotalCompras} - Total Ventas: {self.TotalVentas} - Stock: {self.Stock}")
+
+
+class RegistroProducto():
+        def __init__(self):
+            self.productos = {}
+
+        def agregar_producto(self):
+            while True:
+                IdProducto = input("Ingresa el ID del producto: ").strip()
+                if not IdProducto:
+                    print("ERROR: CODIGO VACIO.\n")
+                    continue
+                if IdProducto in self.productos:
+                    print(f"Error: El código '{IdProducto}' ya está registrado.\n")
+                    continue
+                break
+
+            while True:
+                Nombre = input("Ingrese nombre del producto: ").strip()
+                if not Nombre:
+                    print("Error: El nombre no puede estar vacío.\n")
+                    continue
+                break
+
+            categorias = {"ALIMENTOS","HIGIENE","ELECTRODOMESTICOS",""}
+            while True:
+                try:
+                    IdCategoria = input("Ingresa el ID del categoria: ").strip()
+
+
+                except:
+
+
+
+
+
+
+
+
+
+
 
 
 class Categoria():
@@ -75,5 +119,3 @@ class DetalleCompras():
         self.IdProducto = IdProducto
         self.Subtotal = Subtotal
         self.FechaCad = FechaCad
-
-
